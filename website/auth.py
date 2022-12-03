@@ -19,7 +19,8 @@ def login():
                 flash('You are logged in!', category = 'success')
                 login_user(user, remember=True)
                 #Remember user and redirect to home page on successful login
-                return redirect(url_for('views.home'))
+                #return redirect(url_for('views.home'))
+                return render_template('home.html', user=current_user)
             else:
                 flash('Incorrect email or password, please try again.', category = 'error')
         else:
@@ -43,19 +44,18 @@ def sign_up():
         password1 = request.form.get('password1')
         #Confirms password so, two input requests for password are neeeded
         password2 = request.form.get('password2')
-
         user = User.query.filter_by(email=email).first()
         #Criteria for email and passwords
         if user:
             flash ('Email already in use, please use another or try logging in', category='error')
-        elif len(email)<4:
+        elif len(email)< 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name)< 2:
             flash('Name must be longer than 1 character.', category='error')
         elif password1 != password2:
             flash('Passwords do not match, please try again.', category='error')
-        elif password1 < 12:
-            flash('Password must be longer than 12 characters.', category='error')
+        #elif password1 < 12:
+            #flash('Password must be longer than 12 characters.', category='error')
         else:
             #Hashes password before commiting to database
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method = 'sha256'))
@@ -64,5 +64,6 @@ def sign_up():
             login_user(new_user, remember=True)
             flash('Account successfully created!', category='success')
             #Redirect to home page or secure profile for Pi board
-            return redirect(url_for('home.html'))
+            #return redirect(url_for('views.home'))
+            return render_template('home.html', user=current_user)
     return render_template('sign_up.html', user=current_user)

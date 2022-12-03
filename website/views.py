@@ -8,8 +8,7 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
     if request.method == 'POST':
-
         # Home page
-    #Probbaly have this redirect to a file that hosts the Pi stream and data
+        #Probbaly have this redirect to a file that hosts the Pi stream and data
         return render_template("home.html", user = current_user)
 
