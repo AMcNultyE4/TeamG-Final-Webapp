@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html {
+    min-height: 100%;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:linear-gradient(#87CEEB,white);
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+}
+
+h4 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    color: black;
+    text-align: center;
+}
+
+/* Style the form - display items horizontally */
+.form-inline {
+    border-radius: 5px;
+    background-color: #dfdddd;
+    padding: 20px;
+    margin-top: 5px;
+}
+  
+  /* Add some margins for each label */
+.form-inline label {
+    display: inline-block;
+    margin: auto;
+    padding: 5px;
+}
+  
+  /* Style the input fields */
+.form-inline input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.form-inline textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+  
+  /* Style the submit button */
+.form-inline button {
+    padding: 10px 20px;
+    margin-top: 5px;
+    background-color: rgb(133, 133, 133);
+    border: 1px solid #ddd;
+    color: white;
+}
+  
+.form-inline button:hover {
+    background-color: #363636;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Grid Templates----------------------------------------------------------*/
+#template{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#template *{
+    /* background:rgb(20, 112, 81); */
+    padding: 15px;
+}
+
+#homegrid{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#homegrid *{
+    /* background:rgb(20, 112, 81); */
+    padding: 15px;
+}
+
+#aboutgrid{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#aboutgrid *{
+    /* background:rgb(20, 112, 81); */
+    padding: 15px;
+}
+
+#settingsgrid{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#settingsgrid *{
+    padding: 15px;
+}
+
+#contactgrid{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#contactgrid * :not(nav) {
+    padding: 15px;
+}
+
+#loggrid {
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*Set row height*/
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    margin:0 auto;
+    max-width: 1920px;
+    /* border-color:black;
+    border: solid; */
+}
+
+/*Semantic Element Edits--------------------------------------------------*/
+/*Template Page*/
+#template > header{
+    /*goes across all 12 columns*/
+    grid-column: 7/13;
+    grid-row: 2/3;
+    border-color:black;
+    border: solid;
+}
+
+#template > nav{
+    grid-column: 1/12;
+}
+
+#template > main{
+    grid-column: 3/11;
+    border-color:black;
+    border: solid;
+}
+
+#template > footer{
+    grid-column: 1/13;
+    grid-row: 5/6;
+    border-color:rgb(255, 255, 255);
+    border: solid;
+}
+
+/*Home Page*/
+#homegrid > header{
+    grid-column: 1/13;
+}
+
+#homegrid > nav{
+    grid-column: 1/13;
+    grid-row: 2/3;
+}
+
+#homegrid > main{
+    grid-column: 3/11;
+    grid-row: 2;
+}
+
+#homegrid > footer{
+    grid-column: 1/13;
+    grid-row-start: 4;
+}
+
+/*About Page*/
+#aboutgrid > header{
+    grid-column: 7/13;
+}
+
+#aboutgrid > main{
+    grid-column: 3/5;
+    grid-row: 2/5;
+    /* border-color:black;
+    border: solid; */
+}
+
+#aboutgrid > footer{
+    grid-column: 1/13;
+    grid-row: 17;
+}
+
+#aboutgrid > nav{
+    grid-column: 1/7;
+}
+
+.imageone {
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 5/8;
+    margin-bottom: 75px;
+}
+
+.imagetwo {
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 8/11;
+    margin-bottom: 75px;
+}
+
+.imagethree {
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 11/14;
+    margin-bottom: 75px;
+}
+
+.imagefour {
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 14/17;
+    margin-bottom: 75px;
+}
+
+.imagefive {
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 17/20;
+    /* border-color:black;
+    border: solid; */
+    margin-bottom: 75px;
+}
+
+.bioMain {
+    display: grid;
+    grid-column: 6/12;
+    grid-row: 2/5;
+    margin-bottom: 75px;
+}
+
+.bioOne {
+    display: grid;
+    grid-column: 6/12;
+    grid-row: 5/8;
+    margin-bottom: 75px;
+}
+
+.bioTwo {
+    display: grid;
+    grid-column: 6/12;
+    grid-row: 8/11;
+    margin-bottom: 75px;
+}
+
+.bioThree {
+    display: grid;
+    grid-column: 6/12;
+    grid-row: 11/14;
+    margin-bottom: 75px;
+}
+
+.bioFour {
+    display: grid;
+    grid-column: 6/12;
+    grid-row: 14/17;
+    margin-bottom: 75px;
+}
+
+/*Settings Page*/
+#settingsgrid > header{
+    /*goes across all 12 columns*/
+    grid-column: 7/13;
+    /* border-color:black;
+    border: solid; */
+}
+
+#settingsgrid > nav{
+    grid-column: 1/7;
+    /* border-color:black;
+    border: solid; */
+}
+
+#settingsgrid > main{
+    grid-column: 2/7;
+    grid-row-start: 1;
+    margin-top: 10px;
+    margin-bottom: -110px;
+    border-color:black;
+    border: solid;
+}
+
+#settingsgrid > main > h4{
+    text-align: left;
+}
+
+#settingsgrid > section{
+    grid-column: 7/12;
+    grid-row-start: 1;
+    margin-top: 10px;
+    margin-bottom: -110px;
+    border-color:black;
+    border: solid;
+}
+
+#settingsgrid > section > h4{
+    text-align: left;
+}
+
+#settingsgrid > footer{
+    grid-column: 1/13;
+    /* grid-row: 5/6; */
+    /* border-color:black;
+    border: solid; */
+    grid-row-start: 4;
+}
+
+/*Contact Page*/
+#contactgrid > header {
+    grid-column: 7/13;
+}
+
+#contactgrid > nav {
+    grid-column: 1/7;
+}
+
+#contactgrid > main {
+    grid-column: 4/10;
+}
+
+#contactgrid > footer {
+    grid-column: 1/13;
+}
+
+/*Log Page*/
+#loggrid > header {
+    grid-column: 7/13;
+}
+
+#loggrid > main {
+    grid-column: 2/7;
+    margin-top: 5px;
+    border-color:black;
+    border: solid;
+}
+
+/*Align Button Code*/
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 26%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#loggrid > section {
+    grid-column: 7/12;
+    margin-top: 5px;
+}
+
+#loggrid > footer {
+    grid-column: 1/13;
+    grid-row-start: 2;
+    margin-top: 100px;
+    padding-top: 25px;
+    /* border-color:black;
+    border: solid; */
+}
+
+#loggrid > nav {
+    grid-column: 1/13;
+}
+#footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}

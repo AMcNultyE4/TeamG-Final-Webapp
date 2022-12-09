@@ -3,6 +3,10 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, ValidationError, TextAreaField
+from wtforms.validators import DataRequired, EqualTo, Length
+
 
 auth = Blueprint('auth', __name__)
 
@@ -20,7 +24,7 @@ def login():
                 login_user(user, remember=True)
                 #Remember user and redirect to home page on successful login
                 #return redirect(url_for('views.home'))
-                return render_template('home.html', user=current_user)
+                return render_template('newhome.html', user=current_user)
             else:
                 flash('Incorrect email or password, please try again.', category = 'error')
         else:
@@ -67,3 +71,31 @@ def sign_up():
             #return redirect(url_for('views.home'))
             return render_template('home.html', user=current_user)
     return render_template('sign_up.html', user=current_user)
+
+
+
+
+class UserForm(FlaskForm):
+    email = StringField("Email", validators =[DataRequired()])
+    submit = SubmitField("Submit")
+
+
+
+id = current_user
+# In setttings page update email within database for account
+@auth.route('/settings/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    
+    form = UserForm()
+    name_to_update = User.query.get_or_404(id)
+    if request.method == 'POST':
+        name_to_update.email = request.form['email']
+        try:
+            db.session.commit()
+            flash("Email updated successfully!")
+            return render_template("settings.html", form=form, name_to_update = name_to_update, id=id)
+        except:
+            flash("Error! There was an issue with updating your email.")
+            return render_template("settings.html", form=form, name_to_update = name_to_update, id=id)
+    else:
+	    return render_template("settings.html", form=form,name_to_update = name_to_update,id = id)

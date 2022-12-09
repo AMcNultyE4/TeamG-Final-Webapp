@@ -1,0 +1,128 @@
+/*Nav Panel as a whole*/
+/* nav {
+  width: 100%;
+  height: 10%;
+  margin: 0 auto;
+  background-color: #1b1b1b;
+  padding: 5px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color:black;
+  border: solid;
+  display: grid;
+  grid-column: 1/13;
+  box-shadow: 0px 5px 0px #dedede;
+} */
+
+
+/* nav ul {
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
+  border-color:black;
+  border: solid;
+} */
+
+/* nav ul li {
+  display: inline-block;
+  margin: 0 auto;
+  border-color:black;
+  border: solid;
+} */
+
+/*Each Link Block*/
+/* nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #6e0323;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0px 10px;
+  border:rgb(0, 0, 0);
+  border-color:black;
+  border: solid;
+} */
+
+
+/* nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+
+nav.stroke ul li a,
+nav.fill ul li a {
+position: relative;
+}
+
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+width: 0%;
+content: '.';
+color: transparent;
+background: rgb(255, 255, 255);
+height: 3px;
+}
+
+nav.stroke ul li a:hover:after {
+width: 100%;
+}
+
+nav.fill ul li a {
+transition: all 2s;
+}
+
+nav.fill ul li a:after {
+text-align: left;
+content: '.';
+margin: 0;
+opacity: 0;
+}
+
+nav.fill ul li a:hover {
+color: rgb(255, 255, 255);
+z-index: 1;
+}
+
+nav.fill ul li a:hover:after {
+z-index: -10;
+animation: fill 1s forwards;
+-webkit-animation: fill 1s forwards;
+-moz-animation: fill 1s forwards;
+opacity: 1;
+} */
+
+/*nav style's from Bronson's css*/
+.navbar {
+  background:#191970;
+  overflow: auto;
+}
+
+.nav-link,
+.navbar-brand {
+  color:aliceblue;
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+  font-size: x-large;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}

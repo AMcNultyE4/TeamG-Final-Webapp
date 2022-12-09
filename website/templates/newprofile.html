@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", sans-serif}
+    
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+</style>    
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <img src = "/static/image/LOGO1.jpg" style = "width: 100px; height: 65px;"></a>
+    <a href="/" class="w3-bar-item w3-button w3-wide" style="font-size: larger;">Pi Secure</a>
+    
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small" style="font-size: large;">
+        {% if user.is_authenticated %}
+        <a class="w3-bar-item w3-button" id="home" href="/newhome">Home</a>
+        <a class="w3-bar-item w3-button" id="newprofile" href="/newprofile">Profile</a>
+        <a class="w3-bar-item w3-button" id="newabout" href="/newabout">About Us</a>
+        <a class="w3-bar-item w3-button" id="logout" href="/logout">Logout</a>
+        {% else %}
+        <a class="w3-bar-item w3-button" id="home" href="/newhome">Home</a>
+        <a class="w3-bar-item w3-button" id="newabout" href="/newabout">About Us</a>
+        <a class="w3-bar-item w3-button" id="newlogin" href="/login">Login</a>
+        <a class="w3-bar-item w3-button" id="signUp" href="/sign-up">Sign Up</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+<footer class="w3-center w3-black w3-padding-64">
+    <a href="/newhome" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Back To the top</a>
+    <div class="w3-xlarge w3-section">
+      <p style="color: white ;">Contact : pidontcare@gmail.com. 1+888-888-8888. Copyright 2022 "PiSecure Security Solutions.". All rights reserved. </p>
+    </div>
+  </footer>
+
+</body>
+</html>
