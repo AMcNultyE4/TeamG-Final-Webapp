@@ -13,11 +13,11 @@ def create_app():
     # python -c 'import secrets; print(secrets.token_hex(12))'
     # generate secret key using OS in bash terminal
     #prevents cookie tampering
-    app.config['SECRET_KEY'] = '256b009ddecd51959c4bc2d9' #secret key encripts session data for user
+    app.config['SECRET_KEY'] = '' #secret key encripts session data for user
     #### Local MySQL for development
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:pisecureteamg@localhost/users'
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
     #### Cpanel MySQL for production
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://pisecure_root:pisecureteamg@localhost/pisecure_users'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #db = SQLAlchemy(app)
     db.init_app(app)
